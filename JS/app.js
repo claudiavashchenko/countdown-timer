@@ -1,6 +1,6 @@
 const sliderFill = document.querySelector(".fill");
 const timeLeftText = document.querySelector("#time-left");
-const startCount = 5;
+const startCount = 60;
 let timeLeft = startCount
 
 const timerId = setInterval(() => {
@@ -27,6 +27,9 @@ function surprise() {
     setTimeout(() => {
     const circleElement = document.createElement("div")
     circleElement.classList.add("circle")
+    circleElement.style.left = Math.floor(Math.random() * 100) + "%"
+    circleElement.style.top = Math.floor(Math.random() * 100) + "%"
+    circleElement.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]
     timeLeftText.append(circleElement)
     }, i * 5)
    }
